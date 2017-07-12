@@ -62,7 +62,6 @@
     - insights
     # not ready yet: - edx_notes_api
     - demo
-    - oauth_client_setup
     - oraclejdk
     - role: elasticsearch
       when: "'localhost' in EDXAPP_ELASTIC_SEARCH_CONFIG|map(attribute='host')"
@@ -82,3 +81,4 @@
       when: COMMON_ENABLE_NEWRELIC
     - role: postfix_queue
       when: POSTFIX_QUEUE_EXTERNAL_SMTP_HOST != ''
+    - oauth_client_setup
