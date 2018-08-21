@@ -26,18 +26,6 @@ LMS auth variables:
 {{ lms_auth_config | to_nice_yaml }}
 {% endif %}
 
-{% if lms_preview_env_config %}
-Preview env variables:
----------------
-{{ lms_preview_env_config | to_nice_yaml }}
-{% endif %}
-
-{% if lms_preview_auth_config %}
-Preview auth variables:
----------------
-{{ lms_preview_auth_config | to_nice_yaml }}
-{% endif %}
-
 {% if cms_env_config %}
 CMS env variables:
 ---------------
