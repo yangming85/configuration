@@ -2,3 +2,4 @@
 dependencies:
   - common
   - supervisor
+  - ansible_debug
