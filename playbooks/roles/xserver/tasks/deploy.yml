@@ -85,6 +85,12 @@
   notify:
     - restart xserver
 
+- name: Dump all vars to json
+  template:
+    src: debug.json.j2
+    dest: /tmp/debug.all.json
+    mode: 0600
+
 - name: Checkout grader code
   git:
     dest: "{{ XSERVER_GRADER_DIR }}"
@@ -93,7 +99,7 @@
     accept_hostkey: yes
   environment:
     GIT_SSH: "/tmp/git_ssh.sh"
-  notify: 
+  notify:
     - restart xserver
   register: xserver_grader_checkout
   become_user: "{{ xserver_user }}"
