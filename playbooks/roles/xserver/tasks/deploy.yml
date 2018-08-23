@@ -93,10 +93,13 @@
     accept_hostkey: yes
   environment:
     GIT_SSH: "/tmp/git_ssh.sh"
-  notify: 
+  notify:
     - restart xserver
   register: xserver_grader_checkout
   become_user: "{{ xserver_user }}"
+
+- name: Stop for debugging
+  fail: msg="DONE"
 
 - name: Remove read-only ssh key for the content repo
   file:
