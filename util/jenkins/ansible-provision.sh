@@ -34,7 +34,7 @@ fi
 
 run_ansible() {
   if [[ "$VERBOSE" == "true" ]]; then
-    verbose_arg='-vvv'
+    verbose_arg='-vvvv'
   else
     verbose_arg=''
   fi
