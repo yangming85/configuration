@@ -1,0 +1,19 @@
+---
+# Install nodejs and required packages to run android automation
+
+# get node package
+- name: install nodejs
+  shell: "curl -sL https://deb.nodesource.com/setup_{{node_version}} | sudo -E bash -"
+  when: android_worker is defined
+# install nodejs
+- name: install nodejs
+  apt: name=nodejs
+  when: android_worker is defined
+# Install appium 
+- name: install appium 
+  shell: "npm install -g appium --unsafe-perm=true --allow-root" 
+  when: android_worker is defined
+# Install webdriver 
+- name: Install webdriver 
+  shell: "npm install wd"
+  when: android_worker is defined
